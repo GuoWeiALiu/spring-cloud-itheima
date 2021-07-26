@@ -1,0 +1,16 @@
+server:
+  port: 8000
+
+
+
+spring:
+  application:
+    name: eureka-provider # 应用名称，会在Eureka中显示
+
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url: # EurekaServer的地址，现在是自己的地址，如果是集群，需要加上其它Server的地址。
+      defaultZone: http://eureka-server1:8762/eureka,http://eureka-server2:8763/eureka

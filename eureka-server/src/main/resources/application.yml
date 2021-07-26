@@ -1,0 +1,22 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: eureka-server # 应用名称，会在Eureka中显示
+
+
+# eureka 配置
+#一共有四个部分配置
+#dashboard： web 控制台配置
+#server: 服务端配置
+#client: 客户端配置
+#instance： 实例配置
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false # 是否注册自己的信息到EurekaServer，默认是true
+    fetch-registry: false # 是否拉取其它服务的信息，默认是true
+    service-url: # EurekaServer的地址，现在是自己的地址，如果是集群，需要加上其它Server的地址。
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
