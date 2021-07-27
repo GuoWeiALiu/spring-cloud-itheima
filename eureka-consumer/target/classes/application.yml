@@ -28,3 +28,7 @@ ribbon:
 logging:
   level:
     com.itheima: debug
+# 开启feign对hystrix的支持
+feign:
+  hystrix:
+    enabled: true # 开启Feign的熔断功能

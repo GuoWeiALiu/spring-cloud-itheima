@@ -30,7 +30,7 @@ public class GoodsController {
     @HystrixCommand(fallbackMethod = "findOne_fallback",
             commandProperties = {
             //设置hystrix 超时时间
-            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",value = "9000")})
+            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",value = "3000")})
     @GetMapping("/findOne/{id}")
     public Goods findOne(@PathVariable("id") int id) {
         Goods goods = goodsService.findOne(id);
