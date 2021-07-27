@@ -24,7 +24,7 @@ public class GoodsController {
     public Goods findOne(@PathVariable("id") int id){
         Goods goods = goodsService.findOne(id);
         try {
-            Thread.sleep(2000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

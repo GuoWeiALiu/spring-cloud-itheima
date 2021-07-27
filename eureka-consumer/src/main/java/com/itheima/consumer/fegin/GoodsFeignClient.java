@@ -1,5 +1,6 @@
 package com.itheima.consumer.fegin;
 
+import com.itheima.consumer.config.FeignLogConfig;
 import com.itheima.consumer.domain.Goods;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  *  3 编写调用接口，接口的声明规则和提供方保持一致
  *  4 注入接口对现象，调用接口方法完成远程调用
  */
-@FeignClient(value = "EUREKA-PROVIDER")
+@FeignClient(value = "EUREKA-PROVIDER", configuration = FeignLogConfig.class)
 public interface GoodsFeignClient {
     @GetMapping("/goods/findOne/{id}")
     public Goods findOneById(@PathVariable("id") int id);
