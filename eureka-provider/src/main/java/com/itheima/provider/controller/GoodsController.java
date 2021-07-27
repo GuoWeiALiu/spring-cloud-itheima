@@ -23,8 +23,14 @@ public class GoodsController {
     @GetMapping("/findOne/{id}")
     public Goods findOne(@PathVariable("id") int id){
         Goods goods = goodsService.findOne(id);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         goods.setTitle(goods.getTitle()+":"+port);  //端口号设置到商品标题
         return goods;
     }
 
 }
+
