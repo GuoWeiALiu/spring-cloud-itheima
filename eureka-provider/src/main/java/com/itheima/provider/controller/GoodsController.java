@@ -31,9 +31,9 @@ public class GoodsController {
             commandProperties = {
             //设置hystrix 超时时间
             @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",value = "3000"),
-            @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds",value = "5000"),
-            @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold",value = "30"),
-            @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage",value = "3000")
+//            @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds",value = "5000"),
+//            @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold",value = "30"),
+//            @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage",value = "3000")
 
 
     })
